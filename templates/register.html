@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form method="post">
+        {{ form.csrf_token }}
+         {{ form.first_name.label() }}
+            {{ form.first_name(class="form-control", placeholder="John") }}
+        <br>
+
+        {{ form.last_name.label() }}
+            {{ form.last_name(class="form-control", placeholder="Doe") }}
+        <br>
+
+            {{ form.email.label() }}
+            {{ form.email(class="form-control", placeholder="jd @email.com") }}
+        <br>
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+
+              {{ form.password2.label() }}
+            {{ form.password2(class="form-control", placeholder="Password") }}
+
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary",method="post") }}
+    </form>
+
+</body>
+</html>
